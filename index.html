@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/css/bootstrap-rtl.min.css" rel="stylesheet" />
+    <link href="assets/css/app-rtl.css" rel="stylesheet" />
+    <link href="assets/css/style-rtl.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/bootstrarp-icon/bootstrap.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/fontawesome/css/all.css">
+    <script src="assets/js/jquery-2.2.4.min.js"></script>
+    <script src="assets/js/modal.js"></script>
+    <title>.: وب سایت رسمی شرکت سروش رشد:.</title>
+    
+    
+    <style>
+        .product-bar-item .product-bar-item-text {
+        position: absolute;
+        top: 9px;
+        right: -91px;
+        color: #b10e23;
+        width: 80px;
+    }
+        .product-items-wrapper {
+        width: 100%;
+    }
+        #successMessage {
+            color: white;
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            width: auto;
+            height: auto;
+            background: green;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px !important;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="upper-header" style="display:block;">
+            <div class="container" style="height: 100%;">
+                <div class="row" style="height: 100%; margin: 0px 0px;">
+                    <div class="upper-header-social-icons marginright" style="float: right; display: inline-block;">
+                        <div class="social-icon">
+                            <a href="https://www.instagram.com/sorooshe_roshd/"><i class="bi bi-instagram" style="color:white; font-size:1.7rem"></i></a>
+                            <a href="https://wa.me/989902976721"><i class="bi bi-whatsapp" style="color:white; font-size:1.7rem; margin:0px 10px;"></i></a>
+                            <a href="https://t.me/+989902976721"><i class="bi bi-telegram" style="color:white; font-size:1.7rem"></i></a>
+    
+                        </div>
+                    </div>
+                    <div class="upper-header-order marginbutton" style="float: left; display: inline-block; font-size: 10px;">
+                        <a href=""><i class="bi bi-box-seam" style="color:white; font-size:1.4rem"></i></a>
+                        <a href="#" id="btnOrder" style="margin-right: 10px;">پیگیری سفارش</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="menu-header" style="display: block;padding: 0px;position: relative; box-shadow:0px 3px 10px #7777 !important;">
+            <div class="container d-flex width324" style="display:flex; justify-content:space-between; margin-right:7rem; ">
+                <div class="menu-header-item-list" style="height: 100%;">
+                    <ul class="menu-header-main" style="margin-bottom: 0px !important;padding-top: 3%; height: 100%; margin: 0px;">
+                        <li class="menu-header-item"><a href="/">صفحه اصلی</a></li>
+                        <li class="menu-header-item libozorg" style="position:relative;">
+                            <a href="/products">محصولات</a>
+                            <ul class="ulli12">
+                                @foreach (var item in Model)
+                                {
+                                    <li>
+                                        <a class="boldnone" href="/products/cats/@item.catID/@item.catName.safeUrl()">
+                                            @item.catName
+                                        </a>
+                                    </li>
+                                }
+    
+                            </ul>
+                        </li>
+                        <li class="menu-header-item"><a href="/blogs">مقالات علمی</a></li>
+                        <li class="menu-header-item"><a href="/news">اخبار</a></li>
+                        <li class="menu-header-item"><a href="/aboutus">درباره ما</a></li>
+                        <li class="menu-header-item"><a href="/contactus">تماس با ما</a></li>
+                    </ul>
+                </div>
+                <div class="menu-header-search-bar" style="">
+                    <div class="searchbar-wrapper" style="">
+                        <a href="/">
+                            <img src="assets/images/header-logo.png" style="" class="widmage1" />
+                        </a>
+                        <input id="txtSearch" class="search-input" placeholder="جستجو" style="width: 100px;">
+                        <div class="bg-redline">
+                            <a id="btnSearch" href="#">
+                                <i class="bi bi-search">
+    
+                                </i>
+                            </a>
+    
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+        <div class="menu-header-mobile ">
+            <div class="menu-header-mobile-wrapper">
+                <div class="mobile-header-toggle-bar">
+                    <i class="bi bi-list spost" style="color:#b10f23; font-size:2rem; cursor:pointer;"></i>
+                </div>
+                <div class="mobile-header-logo" style="display:flex; justify-content:flex-end">
+    
+                    <a href="/" style="width:50%;">
+                        <img src="/assets/images/header-logo.png" alt="" style="width:100%;">
+                    </a>
+                </div>
+            </div>
+            <div class="mobile-header-menu overhiddeenshod">
+                <ul class="menu-header-main-mobile" style="background-color:#FAFAFA;">
+                    <li class="menu-header-item-mobile"><a href="/">صفحه اصلی</a></li>
+                    <li class="menu-header-item-mobile"><a href="/products">محصولات</a></li>
+                    <li class="menu-header-item-mobile"><a href="/blogs">مقالات علمی</a></li>
+                    <li class="menu-header-item-mobile"><a href="/news">اخبار</a></li>
+                    <li class="menu-header-item-mobile"><a href="/aboutus">درباره ما</a></li>
+                    <li class="menu-header-item-mobile"><a href="/contactus">تماس با ما</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    
+
+<div class="sliders" style="">
+    <img style="width:100%;"  src="assets/images/BG-Slider.jpg"/>
+    <div class="stodoo">
+        <div class="childstodoo">
+
+        <img src="assets/images/soroshrohd.png" style="width:100%; object-fit:cover;" />
+        <span class="spane1" id="spane1">
+            <img src="assets/images/Rectangle 580s copy.png" />
+        </span>
+        <span class="spane2" id="spane2">
+            <img src="assets/images/Rectangle 580s copy.png" />
+        </span>
+        </div>
+
+
+    </div>
+
+    
+    <div class="slider-item" style="" id="dayereh">
+
+
+        <figure>
+            <img src="assets/images/Layer-0-copy-2.png" />
+        </figure>
+        <figure data-tak="trues">
+            <img src="assets/images/Layer-0-copy-3.png" id="" />
+        </figure>
+        <figure>
+            <img src="assets/images/Layer-0-copy-5.png" id="imagespan" />
+        </figure>
+        <figure>
+            <img src="assets/images/Layer-0-copy-4.png" data-name=true id="imagebozorg" />
+        </figure>
+        <figure>
+            <img src="assets/images/Layer-0-copy-6.png" style="pointer-events:auto;" id="imagespan2" />
+        </figure>
+        <figure>
+            <img src="assets/images/Layer-0-copy-8.png" id="attrbt" />
+        </figure>
+
+    </div>
+    
+    <section class="width50" id="width50">
+        <div id="divaval1" data-pro="mahsol1">
+
+            <h1>
+                کنسانتره گوشتی 2.5 درصد بلدرچین
+            </h1>
+            <p>
+                استفاده از این کنسانتره، سبب افزایش سرعت رشد، بهبود ضریب تبدیل غذایی و کاهش تلفات در جوجه بلدرچین می شود.
+            </p>
+            <div>
+                <a href="/products">
+                    مشادهده محصولات
+                </a>
+            </div>
+        </div>
+        <div>
+
+            <h1>
+                کنسانتره 3 درصد مادر گوشتی دوره پرورش و رشد
+            </h1>
+            <p>
+                کنسانتره دوره پرورش و رشد از یک روزگی تا 105 روزگی یا طبق نظر کارشناس
+
+                کنسانتره دوره پیش تخمگذاری و تولید از 105 روزگی تا آخر دوره تولید
+            </p>
+            <div>
+                <a href="/products">
+                    مشادهده محصولات
+                </a>
+            </div>
+        </div>
+        <div>
+
+            <h1>
+                کنسانتره 2.5 درصد تخمگذار نوع 2
+            </h1>
+            <p>
+                مکمل ویتامینه، مکمل معدنی، لیزین، متیونین، ترئونین، دی کلسیم فسفات، کربنات کلسیم، چربی، نمک و سایر افزودنی‌های مجاز و آنزیم فیتاز
+            </p>
+            <div>
+                <a href="/products">
+                    مشادهده محصولات
+                </a>
+            </div>
+        </div>
+
+        <div>
+
+            <h1>
+                کنسانتره 2.5 درصد تخمگذار نوع 1 A1 پلاس
+            </h1>
+            <p>
+                مکمل ویتامینه، مکمل معدنی، لیزین، متیونین، ترئونین، دی کلسیم فسفات، کربنات کلسیم، چربی، نمک و سایر افزودنی‌های مجاز و آنزیم فیتاز
+            </p>
+            <div>
+                <a href="/products">
+                    مشادهده محصولات
+                </a>
+            </div>
+        </div>
+
+        <div>
+
+            <h1>
+                کنسانتره 2.5 درصد تخمگذار نوع 1
+            </h1>
+            <p>
+                مکمل ویتامینه، مکمل معدنی، لیزین، متیونین، ترئونین، دی کلسیم فسفات، کربنات کلسیم، چربی، نمک و سایر افزودنی‌های مجاز و آنزیم فیتاز
+            </p>
+            <div>
+                <a href="/products">
+                    مشادهده محصولات
+                </a>
+            </div>
+        </div>
+        <div>
+
+            <h1>
+                کنسانتره 2.5 درصد A1 پلاس ویژه پرورش پولت نژاد نیک چیک
+            </h1>
+            <p>
+                افزایش میزان تخمگذاری , بهبود کیفیت پوسته و کاهش تخم مرغ های شکسته , افزایش تولید در زمان پیک , سهولت ساخت دان و صرفه جویی در زمان , کاهش هزینه های تولید دان , کاهش افت تولید ناشی از بروز بیماری ها
+            </p>
+            <div>
+                <a href="/products">
+                    مشادهده محصولات
+                </a>
+            </div>
+        </div>
+        <div>
+
+            <h1>
+                کنسانتره تخمگذار 3.5 درصد فرمول 3 A1 پلاس
+            </h1>
+            <p>
+                تامین کننده حداقل ۳۰ ماده مورد نیاز طیور تخم گذار
+                ,
+                دارای عمر قفسه ای 9 ماهه.
+            </p>
+            <div>
+                <a>
+                    مشادهده محصولات
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+
+</div>
+<span id="charkhesh1">
+
+</span>
+<span id="charkhesh2">
+
+</span>
+
+<div class="sliders2">
+
+    <div class="slider-item2 slidermobile2" id="dayereh2">
+
+        <figure>
+            <img src="assets/images/Layer-0-copy-1.png" />
+        </figure>
+        <figure>
+            <img src="assets/images/Layer-0-copy-2.png" />
+        </figure>
+        <figure data-tak="trues">
+            <img src="assets/images/Layer-0-copy-3.png" style="pointer-events:auto;" />
+        </figure>
+
+        <figure id="imagespan3">
+            <img src="assets/images/Layer-0-copy-5.png" />
+        </figure>
+        <figure>
+            <img src="assets/images/Layer-0-copy-4.png" />
+        </figure>
+        <figure>
+            <img src="assets/images/Layer-0-copy-6.png" data-name="true" />
+        </figure>
+        <figure id="imagespan4">
+            <img src="assets/images/Layer-0-copy-8.png" />
+        </figure>
+
+
+
+
+    </div>
+
+    <section class="width60" id="width60">
+        <div id="divaval2" data-pro="mahsol2">
+
+            <h1>
+                کنسانتره گوشتی 2.5 درصد بلدرچین
+            </h1>
+            <p>
+                استفاده از این کنسانتره، سبب افزایش سرعت رشد، بهبود ضریب تبدیل غذایی و کاهش تلفات در جوجه بلدرچین می شود.
+            </p>
+            <div>
+                <a href="/products">
+                    مشادهده محصولات
+                </a>
+            </div>
+        </div>
+        <div>
+
+            <h1>
+                کنسانتره 3 درصد مادر گوشتی دوره پرورش و رشد
+            </h1>
+            <p>
+                کنسانتره دوره پرورش و رشد از یک روزگی تا 105 روزگی یا طبق نظر کارشناس
+
+                کنسانتره دوره پیش تخمگذاری و تولید از 105 روزگی تا آخر دوره تولید
+            </p>
+            <div>
+                <a href="/products">
+                    مشادهده محصولات
+                </a>
+            </div>
+        </div>
+        <div>
+
+            <h1>
+                کنسانتره 2.5 درصد تخمگذار نوع 2
+            </h1>
+            <p>
+                مکمل ویتامینه، مکمل معدنی، لیزین، متیونین، ترئونین، دی کلسیم فسفات، کربنات کلسیم، چربی، نمک و سایر افزودنی‌های مجاز و آنزیم فیتاز
+            </p>
+            <div>
+                <a href="/products">
+                    مشادهده محصولات
+                </a>
+            </div>
+        </div>
+        <div>
+
+            <h1>
+                کنسانتره 2.5 درصد تخمگذار نوع 1 A1 پلاس
+            </h1>
+            <p>
+                مکمل ویتامینه، مکمل معدنی، لیزین، متیونین، ترئونین، دی کلسیم فسفات، کربنات کلسیم، چربی، نمک و سایر افزودنی‌های مجاز و آنزیم فیتاز
+            </p>
+            <div>
+                <a href="/products">
+                    مشادهده محصولات
+                </a>
+            </div>
+        </div>
+        <div>
+
+            <h1>
+                کنسانتره 2.5 درصد تخمگذار نوع 1
+            </h1>
+            <p>
+                مکمل ویتامینه، مکمل معدنی، لیزین، متیونین، ترئونین، دی کلسیم فسفات، کربنات کلسیم، چربی، نمک و سایر افزودنی‌های مجاز و آنزیم فیتاز
+            </p>
+            <div>
+                <a href="/products">
+                    مشادهده محصولات
+                </a>
+            </div>
+        </div>
+        <div>
+
+            <h1>
+                کنسانتره 2.5 درصد A1 پلاس ویژه پرورش پولت نژاد نیک چیک
+            </h1>
+            <p>
+                افزایش میزان تخمگذاری , بهبود کیفیت پوسته و کاهش تخم مرغ های شکسته , افزایش تولید در زمان پیک , سهولت ساخت دان و صرفه جویی در زمان , کاهش هزینه های تولید دان , کاهش افت تولید ناشی از بروز بیماری ها
+            </p>
+            <div>
+                <a href="/products">
+                    مشادهده محصولات
+                </a>
+            </div>
+        </div>
+        <div>
+
+            <h1>
+                کنسانتره تخمگذار 3.5 درصد فرمول 3 A1 پلاس
+            </h1>
+            <p>
+                تامین کننده حداقل ۳۰ ماده مورد نیاز طیور تخم گذار
+                ,
+                دارای عمر قفسه ای 9 ماهه.
+            </p>
+            <div>
+                <a href="/products">
+                    مشادهده محصولات
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+
+    <span id="charkhesh3" style="display:flex;">
+        <i class="bi bi-arrow-right-circle-fill"id="iconright"></i>
+    </span>
+    <span id="charkhesh4">
+        <i class="bi bi-arrow-left-circle-fill"id="iconleft"></i>
+    </span>
+    <figure style="width:100%;">
+        <img src="assets/images/newbackground/Layer 41.png" style="" />
+        <img src="assets/images/newbackground/Rectangle 580.png" />
+        <img src="assets/images/newbackground/SOROOSHE ROSHD CO..png" />
+        <img src="assets/images/newbackground/Poultry feed  concentrate and supplement.png" />
+    </figure>
+</div>
+<!-- tamashod -->
+<div class="products">
+    <div class="title-wrapper">
+        <div class="main-title">
+            <h2>محصولات</h2>
+            <div class="main-title-seprator afterbefor">
+                <span>
+
+                </span>
+                
+            </div>
+        </div>
+    </div>
+<div class="product-items-wrapper">
+    
+    
+
+   
+    <div catID="#" class="product-item">
+        <div class="product-item-image">
+            <a href="#"><img src="assets/images/1.png"></a>
+        </div>
+        <div class="product-item-context">
+            <div class="product-item-title">
+                <div class="product-item-title-starter"><img src="assets/images/tstarter.png" alt="title-starter"></div>
+                <div class="product-item-title-text">
+                    <a href="#">
+                        <h3>کانتینر2026</h3>
+                    </a>
+                </div>
+            </div>
+            <div class="product-item-desc">
+                <p>توضیحات محصولات </p>
+            </div>
+        </div>
+    </div>
+    <div catID="#" class="product-item">
+        <div class="product-item-image">
+            <a href="#"><img src="assets/images/2.png"></a>
+        </div>
+        <div class="product-item-context">
+            <div class="product-item-title">
+                <div class="product-item-title-starter"><img src="assets/images/tstarter.png" alt="title-starter"></div>
+                <div class="product-item-title-text">
+                    <a href="#">
+                        <h3>کانتینر2026</h3>
+                    </a>
+                </div>
+            </div>
+            <div class="product-item-desc">
+                <p>توضیحات محصولات </p>
+            </div>
+        </div>
+    </div>
+    <div catID="#" class="product-item">
+        <div class="product-item-image">
+            <a href="#"><img src="assets/images/3.png"></a>
+        </div>
+        <div class="product-item-context">
+            <div class="product-item-title">
+                <div class="product-item-title-starter"><img src="assets/images/tstarter.png" alt="title-starter"></div>
+                <div class="product-item-title-text">
+                    <a href="#">
+                        <h3>کانتینر2026</h3>
+                    </a>
+                </div>
+            </div>
+            <div class="product-item-desc">
+                <p>توضیحات محصولات </p>
+            </div>
+        </div>
+    </div>
+    <div catID="#" class="product-item">
+        <div class="product-item-image">
+            <a href="#"><img src="assets/images/4.png"></a>
+        </div>
+        <div class="product-item-context">
+            <div class="product-item-title">
+                <div class="product-item-title-starter"><img src="assets/images/tstarter.png" alt="title-starter"></div>
+                <div class="product-item-title-text">
+                    <a href="#">
+                        <h3>کانتینر2026</h3>
+                    </a>
+                </div>
+            </div>
+            <div class="product-item-desc">
+                <p>توضیحات محصولات </p>
+            </div>
+        </div>
+    </div>
+    <div catID="#" class="product-item">
+        <div class="product-item-image">
+            <a href="#"><img src="assets/images/5.png"></a>
+        </div>
+        <div class="product-item-context">
+            <div class="product-item-title">
+                <div class="product-item-title-starter"><img src="assets/images/tstarter.png" alt="title-starter"></div>
+                <div class="product-item-title-text">
+                    <a href="#">
+                        <h3>کانتینر2026</h3>
+                    </a>
+                </div>
+            </div>
+            <div class="product-item-desc">
+                <p>توضیحات محصولات </p>
+            </div>
+        </div>
+    </div>
+    <div catID="#" class="product-item">
+        <div class="product-item-image">
+            <a href="#"><img src="assets/images/6.png"></a>
+        </div>
+        <div class="product-item-context">
+            <div class="product-item-title">
+                <div class="product-item-title-starter"><img src="assets/images/tstarter.png" alt="title-starter"></div>
+                <div class="product-item-title-text">
+                    <a href="#">
+                        <h3>کانتینر2026</h3>
+                    </a>
+                </div>
+            </div>
+            <div class="product-item-desc">
+                <p>توضیحات محصولات </p>
+            </div>
+        </div>
+    </div>
+    <div catID="#" class="product-item">
+        <div class="product-item-image">
+            <a href="#"><img src="assets/images/7.png"></a>
+        </div>
+        <div class="product-item-context">
+            <div class="product-item-title">
+                <div class="product-item-title-starter"><img src="assets/images/tstarter.png" alt="title-starter"></div>
+                <div class="product-item-title-text">
+                    <a href="#">
+                        <h3>کانتینر2026</h3>
+                    </a>
+                </div>
+            </div>
+            <div class="product-item-desc">
+                <p>توضیحات محصولات </p>
+            </div>
+        </div>
+    </div>
+    <div catID="#" class="product-item">
+        <div class="product-item-image">
+            <a href="#"><img src="assets/images/8.png"></a>
+        </div>
+        <div class="product-item-context">
+            <div class="product-item-title">
+                <div class="product-item-title-starter"><img src="assets/images/tstarter.png" alt="title-starter"></div>
+                <div class="product-item-title-text">
+                    <a href="#">
+                        <h3>کانتینر2026</h3>
+                    </a>
+                </div>
+            </div>
+            <div class="product-item-desc">
+                <p>توضیحات محصولات </p>
+            </div>
+        </div>
+    </div>
+    
+    
+
+</div>
+
+    <div class="products-more">
+        <div class="more-products storepath">
+            <a href="/products">
+                محصولات
+
+                
+            </a>
+        </div>
+    </div>
+    
+</div>
+
+<!-- end product -->
+
+
+<div class="about-us">
+    <div class="about-us-image"></div>
+    <div class="about-us-context">
+        <img class="about-us-context-overlay" src="assets/images/about-overlay.png" alt="">
+        <div class="about-us-content">
+            <div class="about-us-title">
+                <h3 class="h3titrs">شرکت سروش رشد</h3>
+            </div>
+            
+            <div class="about-us-text">
+                <p class="marginsp0">
+                    شرکت سروش‌رشد توسط گروهی از افراد و از جمله آقای دکتر پزشکیان که بیش از 40 سال سابقه فعالیت در صنعت طیور ایران را دارند، از سال 1378 آغاز بکار نمود.
+                    کاربردی‌کردن تفکر علم روز دنیا در صنعت طیور ایران، نوآوری در تولید و تعهد در کیفیت از اهداف این شرکت از بدو فعالیت بوده‌اند. حضور قریب به 20 سال مستمر در عرصه تولید همراه با ثبات و یا بهبود هرچه بیشتر کیفیت تولیدات خود، بزرگترین افتخار این شرکت و نشانه تعهد در خدمت به صنعت طیور ایران بوده است.
+                </p>
+            </div>
+            <div class="about-us-contact">
+                <div class="about-us-contact-item">
+                    <div class="about-us-contact-item-icon">
+                        <a href=""><i class="bi bi-person-fill styleicons"></i></a>
+                    </div>
+                    <div class="about-us-contact-item-text">
+                        <a href="/aboutus">درباره ما</a>
+                    </div>
+                </div>
+                <div class="about-us-contact-item">
+                    <div class="about-us-contact-item-icon">
+                        <a href=""><i class="bi bi-envelope-open styleicons" style=""></i></a>
+                    </div>
+                    <div class="about-us-contact-item-text">
+                        <a href="/contactus">تماس با ما</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- end morgh -->
+<div class="articles">
+    <div class="main-title" style="display:flex; justify-content:center;">
+        <div style="">
+            <h2>مقالات علمی</h2>
+            <div class="main-title-seprator afterbefor" style="display:flex">
+                <span></span>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="articles-items">
+
+    
+        <div class="article-item-1" style="background: url('assets/images/blogs/c570ca4f-2733-482d-b448-74176eba72b5.jpg');
+            background-repeat:no-repeat; background-size:cover; background-position:50% 50%;">
+            <a href="/blogs/@item.blogID/@item.blogTitle.safeUrl()">
+                <div class="article-image-overlay"></div>
+                <div class="article-text">
+                    <h3>توضیحات مقالات سایت</h3>
+                </div>
+                
+            </a>
+        </div>
+        <div class="article-item-1" style="background: url('assets/images/blogs/e944b882-dd89-481c-af6f-79325649140c.jpg');
+            background-repeat:no-repeat; background-size:cover; background-position:50% 50%;">
+            <a href="/blogs/@item.blogID/@item.blogTitle.safeUrl()">
+                <div class="article-image-overlay"></div>
+                <div class="article-text">
+                    <h3>توضیحات مقالات سایت</h3>
+                </div>
+                
+            </a>
+        </div>
+        <div class="article-item-1" style="background: url('assets/images/blogs/e4d66894-02d0-4a1f-bb0f-0056c99c6be9.jpg');
+            background-repeat:no-repeat; background-size:cover; background-position:50% 50%;">
+            <a href="/blogs/@item.blogID/@item.blogTitle.safeUrl()">
+                <div class="article-image-overlay"></div>
+                <div class="article-text">
+                    <h3>توضیحات مقالات سایت</h3>
+                </div>
+                
+            </a>
+        </div>
+        
+ 
+
+
+</div>
+
+    <div class="more-articles d-flex justify-content-center" >
+        <div class="storepath" style="margin-bottom:2rem;">
+            <a href=""> مقالات بیشتر ... </a>
+        </div>
+    </div>
+<div>
+    <br />
+    <br />
+    <br />
+</div>
+
+
+
+    <div class="footer">
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12959.814714562295!2d51.373838063375906!3d35.702757484822946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e015075bfaa39%3A0x167fba2b7bc9ce99!2sSoroosh%20Roshd!5e0!3m2!1sen!2s!4v1702135330595!5m2!1sen!2s" width="600" height="480" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="footer-contact-form">
+                <div class="contact-form-wrapper">
+                    <div class="contact-form">
+                        <div class="contact-title ghirmiz">
+                            <h4>درخواست مشاوره و راهکار</h4>
+                        </div>
+                        <div class="contact-form-form margitopy">
+                            <input class="contact-input" type="text" placeholder="نام و نام خانوادگی" style="margin-bottom:15px;">
+                            <input class="contact-input" type="text" placeholder="تلفن" style="margin-bottom:15px;">
+                            <input class="contact-input" type="text" placeholder="ایمیل" style="margin-bottom:15px;">
+                            <textarea class="contact-textarea" name="conact-desc" placeholder="شرح درخواست" style="margin-bottom:15px;"></textarea>
+                            <div class="contact-button-wrapper">
+                                <button class="contact-button" type="submit">ارسال</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-title ghirmiz">
+                            <h4>ارتباط با ما</h4>
+                        </div>
+                        <div class="contact-info-text">
+                            <span>
+                                <i class="bi bi-building-fill-check" style="font-size:1.7rem; color:#b10f23; margin-left:1rem;"></i>
+                                <span class="contact-title paragraphhaye1">دفتر مرکزی:</span>
+                                <span class="paragraphhaye1">
+                                    تهران، میدان توحید، خیابان فرصت شیرازی، نرسیده به جمالزاده، پلاک 51
+                                    <br />
+                                    کدپستی: 1419815671
+                                </span>
+                            </span>
+                            <br />
+                            <br />
+                            <span>
+                                <i class="bi bi-hospital-fill" style="font-size:1.7rem; color:#b10f23; margin-left:1rem;" ></i>
+                                <span class="contact-title paragraphhaye1">کارخانه:</span>
+                                <span class="paragraphhaye1">تهران، شهرستان ملارد، شهرک صنعتی صفادشت، خیابان دوم غربی، پلاک 114</span>
+                            </span>
+                            <br />
+                            <br />
+                            <div class="contact-info-item">
+                                <i class="bi bi-telephone-fill" style="color:#b10f23; font-size:1.7rem; margin-left:1rem;"></i>
+                                <span class="paragraphhaye1"> 66940301 - 021</span>
+                            </div>
+                       
+                            <div class="contact-info-item">
+                                <i class="bi bi-envelope" style="font-size:1.7rem; color:#b10f23; margin-left:1rem;" ></i>
+                                <span class="paragraphhaye1"> info@sorooshe-roshd.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="below-footer"></div>
+    </div>
+
+    <!-- Modal -->
+    
+    <script>
+        $("#btnOrder").click(function () {
+
+
+            $.get("/checkorder/",
+                function (result) {
+
+                    $("#modalTitle").html("پیگیری سفارش");
+                    $("#modalBody").html(result);
+                    $("#myModal").modal();
+                });
+
+
+        });
+    </script>
+    <!-- end Modal -->
+
+
+    <script>
+        $(document).ready(function () {
+            $("#allproducts").click();
+        });
+
+        $(".product-bar-item").each(function () {
+            $(this).on("click",
+                function () {
+                    $(".product-bar-item").removeClass("active");
+                    $(this).addClass("active");
+
+                    var _catID = $(this).attr("catID");
+                    $(".product-item:nth-child(n+9)").css("display", "block");
+                    $(".product-item").css("display", "block");
+                    $(".product-item[catID !='" + _catID + "']").css("display", "none");
+                })
+
+        });
+
+        $("#allproducts").on("click",
+            function () {
+                var _catID = $(this).attr("catID");
+                $(".product-item[catID !='" + _catID + "']").css("display", "block");
+                $(".product-item:nth-child(n+9)").css("display", "none");
+            });
+    </script>
+
+    <script>
+        
+
+        
+        $(function () {
+            var _messages = $("#successMessage").text();
+            if (_messages != "") {
+                var _result = _messages.indexOf("خطا");
+
+                if (_result != -1) {
+                    $("#successMessage").css("background", "red");
+                } else {
+                    $("#successMessage").css("background", "green");
+                }
+                $("#successMessage").css("display", "block");
+                $("#successMessage").fadeOut(10000);
+            }
+        });
+
+        function pageMessage(message) {
+            if (message != "") {
+                var _result = message.indexOf("خطا");
+
+                if (_result != -1) {
+                    $("#successMessage").css("background", "red");
+                } else {
+                    $("#successMessage").css("background", "green");
+                }
+                $("#successMessage").text(message);
+                $("#successMessage").css("display", "block");
+                $("#successMessage").fadeOut(10000);
+            }
+        }
+
+        function JsonPostForm(formData, url, successFN, errorFN) {
+
+
+            $.ajax({
+                url: url,
+                type: "POST",
+                dataType: 'json',
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                data: formData,
+                success: function (data) {
+                    successFN(data);
+                },
+                error: function (error) {
+                    errorFN(error);
+                }
+            });
+        }
+
+    </script>
+
+    <script>
+        $('#txtSearch').on("keypress", function (e) {
+            if (e.keyCode == 13) {
+                searchBox($('#txtSearch').val());
+            }
+        });
+
+        $('#txtSearchR').on("keypress", function (e) {
+            if (e.keyCode == 13) {
+                searchBox($('#txtSearchR').val());
+            }
+        });
+        
+
+        $("#btnSearch").click(function () {
+            searchBox($('#txtSearch').val());
+        });
+
+        $("#btnSearchR").click(function () {
+            searchBox($('#txtSearchR').val());
+        });
+
+        function searchBox(strSearch) {
+            window.location.replace("/search?txtSearch=" + strSearch);
+        }
+
+    </script>
+
+    
+
+</body>
+    <script src="assets/js/JavaScript.js">
+
+    </script>
+    <script src="assets/js/JavaScript2.js"> 
+
+    </script>
+</html>
