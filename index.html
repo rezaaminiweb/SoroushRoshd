@@ -70,15 +70,22 @@
                         <li class="menu-header-item libozorg" style="position:relative;">
                             <a href="/products">محصولات</a>
                             <ul class="ulli12">
-                                @foreach (var item in Model)
-                                {
-                                    <li>
+
+                                 <li>
                                         <a class="boldnone" href="/products/cats/@item.catID/@item.catName.safeUrl()">
-                                            @item.catName
+                                            نوبار منو 1
                                         </a>
                                     </li>
-                                }
-    
+                                    <li>
+                                        <a class="boldnone" href="/products/cats/@item.catID/@item.catName.safeUrl()">
+                                            نوبار منو 2
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="boldnone" href="/products/cats/@item.catID/@item.catName.safeUrl()">
+                                            نوبار منو 3
+                                        </a>
+                                    </li>
                             </ul>
                         </li>
                         <li class="menu-header-item"><a href="/blogs">مقالات علمی</a></li>
